@@ -1,3 +1,4 @@
+import 'package:color_palette/signup_page.dart';
 import 'package:color_palette/widgets/custom_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +44,9 @@ class LoginSignupSelection extends StatelessWidget {
               const SizedBox(height: 20),
               CustomButton(
                 text: 'Sign up',
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SignupPage()));
+                },
               )
               // GestureDetector(
               //   onTap: (){},

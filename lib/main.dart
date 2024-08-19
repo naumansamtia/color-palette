@@ -1,5 +1,5 @@
 import 'package:color_palette/dashboard.dart';
-import 'package:color_palette/login_Signup_selection.dart';
+import 'package:color_palette/login_signup_selection.dart';
 import 'package:flutter/material.dart';
 
 void main() {

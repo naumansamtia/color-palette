@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 
 
 class CustomButton extends StatelessWidget {
@@ -55,6 +57,8 @@ class CustomTextFieldForm extends StatelessWidget {
   final bool? obscureText;
   final IconData? icon;
   final List? inputFormatter ;
+  final String name;
+  final String? validatorText;
 
   // final AutofillHints autofillHints;
 
@@ -66,11 +70,14 @@ class CustomTextFieldForm extends StatelessWidget {
     this.icon,
     this.obscureText,
     this.inputFormatter,
+    required this.name,
+    this.validatorText,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      // height: 45,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: Color(0xffffffff),
@@ -78,18 +85,27 @@ class CustomTextFieldForm extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-        child: TextField(
+        child: FormBuilderTextField(
+          name: name,
           controller: controller,
           obscureText: obscureText ?? false,
           keyboardType: keyboardType,
+          validator: FormBuilderValidators.compose([
+            FormBuilderValidators.required(errorText: validatorText),
+          ]),
           decoration: InputDecoration(
             icon: Icon(
               icon,
               color: Color(0xffE8107A),
-              size: 30,
+              size: 20,
             ),
             border: InputBorder.none,
             labelText: labelText,
+            labelStyle: const TextStyle(
+              color: Color(0xffE8107A),
+              fontSize: 13,
+              ),
+            contentPadding: const EdgeInsets.only(top: 5, bottom: 0),
           ),
         ),
       ),
