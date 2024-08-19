@@ -4,6 +4,8 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 
+import 'login_page.dart';
+
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
 
@@ -248,7 +250,9 @@ class _SignupPageState extends State<SignupPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+                        },
                       ),
                     ],
                   ),

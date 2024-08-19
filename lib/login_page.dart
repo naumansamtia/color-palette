@@ -1,3 +1,5 @@
+import 'package:color_palette/pages/password_reset.dart';
+import 'package:color_palette/signup_page.dart';
 import 'package:color_palette/widgets/custom_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -105,7 +107,9 @@ class _LoginPageState extends State<LoginPage> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => PasswordResetPage()));
+                      },
                     ),
                   ),
                 ),
@@ -113,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                 CustomButton(
                   textColor: Colors.white,
                   color: const Color(0xffE8107A),
-                  text: 'Login',
+                  text: 'Log in',
                   onPressed: () {},
                 ),
                 SizedBox(
@@ -196,7 +200,9 @@ class _LoginPageState extends State<LoginPage> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const SignupPage()));
+                      },
                     ),
                   ],
                 ),
