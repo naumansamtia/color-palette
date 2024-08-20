@@ -1,4 +1,4 @@
-import 'package:color_palette/dashboard.dart';
+import 'package:color_palette/upload_selfie_page.dart';
 import 'package:color_palette/login_signup_selection.dart';
 import 'package:flutter/material.dart';
 

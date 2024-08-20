@@ -4,6 +4,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 
+import 'upload_selfie_page.dart';
 import 'login_page.dart';
 
 class SignupPage extends StatefulWidget {
@@ -168,7 +169,9 @@ class _SignupPageState extends State<SignupPage> {
                     textColor: Colors.white,
                     color: const Color(0xffE8107A),
                     text: 'Sign up',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const UploadSelfiePage()));
+                    },
                   ),
                   SizedBox(
                     height: 10,
