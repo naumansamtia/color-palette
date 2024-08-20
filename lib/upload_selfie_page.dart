@@ -193,29 +193,36 @@ class _UploadSelfiePageState extends State<UploadSelfiePage> {
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                child: Container(
-                  height: 150,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color(0xffE8107A).withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 2,
-                        offset:
-                        const Offset(0, 2), // changes position of shadow
-                      ),
-                    ],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: const Color(0xffE8107A), width: 1),
-                  ),
-                  child: GestureDetector(
-                    onTap: () {
-                      // Navigator.pushNamed(context, '/camera');
-                    },
-                    child: const Icon(Icons.add_a_photo,
-                        size: 50, color: Color(0xffE8107A)),
+                child: GestureDetector(
+                  onTap: () {
+                    print('Result Container Tapped');
+                    // Navigator.pushNamed(context, '/camera');
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.only(left: 20),
+                    alignment: Alignment.bottomCenter,
+                    height: 250,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xffE8107A).withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 2,
+                          offset:
+                          const Offset(0, 2), // changes position of shadow
+                        ),
+                      ],
+                      image: DecorationImage(image: AssetImage('assets/dummy-kid-img.jpg'), fit: BoxFit.cover, opacity: 0.8),
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: const Color(0xffE8107A), width: 1),
+                    ),
+                    child: const Row(
+                      children: [
+                        Icon(Icons.remove_red_eye_outlined, size: 50, color: Colors.white),
+                        Text('Tap to reveal', style: TextStyle(fontSize: 23, color: Colors.white, fontWeight: FontWeight.bold)),
+                      ],
+                    )
                   ),
                 ),
               ),
