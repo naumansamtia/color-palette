@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 
-
 class CustomButton extends StatelessWidget {
   final String text;
   final void Function() onPressed;
@@ -41,7 +40,9 @@ class CustomButton extends StatelessWidget {
           child: Text(
             text,
             style: TextStyle(
-                color: textColor ?? const Color(0xffE8107A), fontWeight: FontWeight.bold, fontSize: fontSize ?? 20),
+                color: textColor ?? const Color(0xffE8107A),
+                fontWeight: FontWeight.bold,
+                fontSize: fontSize ?? 20),
           ),
         ),
       ),
@@ -49,14 +50,14 @@ class CustomButton extends StatelessWidget {
   }
 }
 
-
 class CustomTextFieldForm extends StatelessWidget {
   final String labelText;
   final TextEditingController controller;
   final TextInputType? keyboardType;
   final bool? obscureText;
   final IconData? icon;
-  final List? inputFormatter ;
+  final List? inputFormatter;
+
   final String name;
   final String? validatorText;
 
@@ -104,7 +105,7 @@ class CustomTextFieldForm extends StatelessWidget {
             labelStyle: const TextStyle(
               color: Color(0xffE8107A),
               fontSize: 13,
-              ),
+            ),
             contentPadding: const EdgeInsets.only(top: 5, bottom: 0),
           ),
         ),

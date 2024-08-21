@@ -45,6 +45,7 @@ class _UploadSelfiePageState extends State<UploadSelfiePage> {
       body: <Widget>[
         /// uploading selfie page
         ScanSelfieWidget(),
+
         /// Result page
         ResultListPageWidget(),
       ][currentPageIndex],

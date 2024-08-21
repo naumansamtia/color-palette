@@ -4,6 +4,7 @@ import '../widgets/custom_widgets.dart';
 
 class PasswordResetPage extends StatelessWidget {
   PasswordResetPage({super.key});
+
   final oldPasswordController = TextEditingController();
   final newPasswordController = TextEditingController();
 
@@ -25,7 +26,6 @@ class PasswordResetPage extends StatelessWidget {
           fontSize: 24,
         ),
         title: const Text('Password Reset'),
-
       ),
       body: SingleChildScrollView(
         child: Column(

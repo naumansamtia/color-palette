@@ -21,6 +21,7 @@ class _SignupPageState extends State<SignupPage> {
   final nameController = TextEditingController();
   final phoneController = TextEditingController();
   final dobController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +40,6 @@ class _SignupPageState extends State<SignupPage> {
           fontSize: 24,
         ),
         title: const Text('Sign up'),
-
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -116,41 +116,44 @@ class _SignupPageState extends State<SignupPage> {
                     validatorText: 'Please confirm your password!',
                   ),
                   const SizedBox(height: 10),
-              Container(
-                // height: 45,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Color(0xffffffff),
-                  border: Border.all(color: Color(0xffE8107A), width: 1.5),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-                  child: FormBuilderDateTimePicker(
-                    name: 'dob',
-                    controller: dobController,
-                    inputType: InputType.date,
-                    keyboardType: TextInputType.datetime,
-                    validator: FormBuilderValidators.compose([
-                      FormBuilderValidators.required(errorText: 'Please enter your date of birth!'),
-                    ]),
-                    decoration: const InputDecoration(
-                      icon: Icon(
-                        Icons.calendar_today,
-                        color: Color(0xffE8107A),
-                        size: 20,
+                  Container(
+                    // height: 45,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Color(0xffffffff),
+                      border: Border.all(color: Color(0xffE8107A), width: 1.5),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                      child: FormBuilderDateTimePicker(
+                        name: 'dob',
+                        controller: dobController,
+                        inputType: InputType.date,
+                        keyboardType: TextInputType.datetime,
+                        validator: FormBuilderValidators.compose([
+                          FormBuilderValidators.required(
+                              errorText: 'Please enter your date of birth!'),
+                        ]),
+                        decoration: const InputDecoration(
+                          icon: Icon(
+                            Icons.calendar_today,
+                            color: Color(0xffE8107A),
+                            size: 20,
+                          ),
+                          border: InputBorder.none,
+                          labelText: 'Date of Birth',
+                          labelStyle: TextStyle(
+                            color: Color(0xffE8107A),
+                            fontSize: 13,
+                          ),
+                          contentPadding: EdgeInsets.only(top: 5, bottom: 0),
+                        ),
                       ),
-                      border: InputBorder.none,
-                      labelText: 'Date of Birth',
-                      labelStyle: TextStyle(
-                        color: Color(0xffE8107A),
-                        fontSize: 13,
-                      ),
-                      contentPadding: EdgeInsets.only(top: 5, bottom: 0),
                     ),
                   ),
-                ),
-              ),
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   // Row(
                   //   children: [
                   //     Checkbox(
@@ -162,7 +165,10 @@ class _SignupPageState extends State<SignupPage> {
                   // ),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 40),
-                    child: Text('By signing up, you agree to our Terms of Service and Privacy Policy', style: TextStyle(color: Color(0xffE8107A), fontSize: 12),),
+                    child: Text(
+                      'By signing up, you agree to our Terms of Service and Privacy Policy',
+                      style: TextStyle(color: Color(0xffE8107A), fontSize: 12),
+                    ),
                   ),
                   const SizedBox(height: 20),
                   CustomButton(
@@ -170,7 +176,10 @@ class _SignupPageState extends State<SignupPage> {
                     color: const Color(0xffE8107A),
                     text: 'Sign up',
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const UploadSelfiePage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const UploadSelfiePage()));
                     },
                   ),
                   SizedBox(
@@ -196,7 +205,8 @@ class _SignupPageState extends State<SignupPage> {
                             color: Color(0xffF6CFE3),
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                           ),
-                          child: const Icon(FontAwesomeIcons.google, color: Color(0xffE8107A)),
+                          child: const Icon(FontAwesomeIcons.google,
+                              color: Color(0xffE8107A)),
                         ),
                         onTap: () {},
                       ),
@@ -210,7 +220,8 @@ class _SignupPageState extends State<SignupPage> {
                             color: Color(0xffF6CFE3),
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                           ),
-                          child: const Icon(FontAwesomeIcons.facebook, color: Color(0xffE8107A)),
+                          child: const Icon(FontAwesomeIcons.facebook,
+                              color: Color(0xffE8107A)),
                         ),
                         onTap: () {},
                       ),
@@ -224,7 +235,8 @@ class _SignupPageState extends State<SignupPage> {
                             color: Color(0xffF6CFE3),
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                           ),
-                          child: const Icon(FontAwesomeIcons.fingerprint, color: Color(0xffE8107A)),
+                          child: const Icon(FontAwesomeIcons.fingerprint,
+                              color: Color(0xffE8107A)),
                         ),
                         onTap: () {},
                       ),
@@ -254,7 +266,10 @@ class _SignupPageState extends State<SignupPage> {
                           ),
                         ),
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoginPage()));
                         },
                       ),
                     ],

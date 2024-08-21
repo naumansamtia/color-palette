@@ -34,7 +34,6 @@ class _LoginPageState extends State<LoginPage> {
           fontSize: 24,
         ),
         title: const Text('Login'),
-
       ),
       body: Stack(
         // crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,8 +62,8 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height / 3.9,
-                  child:
-                      Image.asset('assets/logo-icon.png', fit: BoxFit.fitHeight),
+                  child: Image.asset('assets/logo-icon.png',
+                      fit: BoxFit.fitHeight),
                 ),
                 const Text(
                   'Welcome back!',
@@ -108,7 +107,10 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => PasswordResetPage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PasswordResetPage()));
                       },
                     ),
                   ),
@@ -143,7 +145,8 @@ class _LoginPageState extends State<LoginPage> {
                           color: Color(0xffF6CFE3),
                           borderRadius: BorderRadius.all(Radius.circular(50)),
                         ),
-                          child: const Icon(FontAwesomeIcons.google, color: Color(0xffE8107A)),
+                        child: const Icon(FontAwesomeIcons.google,
+                            color: Color(0xffE8107A)),
                       ),
                       onTap: () {},
                     ),
@@ -157,7 +160,8 @@ class _LoginPageState extends State<LoginPage> {
                           color: Color(0xffF6CFE3),
                           borderRadius: BorderRadius.all(Radius.circular(50)),
                         ),
-                        child: const Icon(FontAwesomeIcons.facebook, color: Color(0xffE8107A)),
+                        child: const Icon(FontAwesomeIcons.facebook,
+                            color: Color(0xffE8107A)),
                       ),
                       onTap: () {},
                     ),
@@ -171,7 +175,8 @@ class _LoginPageState extends State<LoginPage> {
                           color: Color(0xffF6CFE3),
                           borderRadius: BorderRadius.all(Radius.circular(50)),
                         ),
-                        child: const Icon(FontAwesomeIcons.fingerprint, color: Color(0xffE8107A)),
+                        child: const Icon(FontAwesomeIcons.fingerprint,
+                            color: Color(0xffE8107A)),
                       ),
                       onTap: () {},
                     ),
@@ -201,7 +206,10 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const SignupPage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignupPage()));
                       },
                     ),
                   ],

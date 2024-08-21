@@ -32,8 +32,8 @@ class ScanSelfieWidget extends StatelessWidget {
                 },
                 child: const Padding(
                   padding: EdgeInsets.only(left: 20.0),
-                  child: Icon(Icons.settings,
-                      size: 30, color: Color(0xffE8107A)),
+                  child:
+                      Icon(Icons.settings, size: 30, color: Color(0xffE8107A)),
                 ),
               ),
             ],
@@ -50,8 +50,7 @@ class ScanSelfieWidget extends StatelessWidget {
                     color: const Color(0xffE8107A).withOpacity(0.5),
                     spreadRadius: 3,
                     blurRadius: 3,
-                    offset:
-                    const Offset(0, 3), // changes position of shadow
+                    offset: const Offset(0, 3), // changes position of shadow
                   ),
                 ],
                 color: Colors.white,
@@ -60,15 +59,15 @@ class ScanSelfieWidget extends StatelessWidget {
               ),
               child: FormBuilderImagePicker(
                 maxImages: 1,
-                name: 'image_picker', decoration: const InputDecoration(
-                border: InputBorder.none,
-                hintText: 'Upload Selfie',
-                hintStyle: TextStyle(color: Color(0xffE8107A)),
-              ),
+                name: 'image_picker',
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Upload Selfie',
+                  hintStyle: TextStyle(color: Color(0xffE8107A)),
+                ),
                 backgroundColor: Colors.white,
                 iconColor: Color(0xffE8107A),
               ),
-
             ),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 5),

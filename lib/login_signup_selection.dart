@@ -16,8 +16,13 @@ class LoginSignupSelection extends StatelessWidget {
           Positioned(
             top: 20,
             left: 0,
-            child: Transform.rotate(angle: 0.5,
-            child: Image.asset('assets/vertical-wings.png', height: 150, width: 55,)),
+            child: Transform.rotate(
+                angle: 0.5,
+                child: Image.asset(
+                  'assets/vertical-wings.png',
+                  height: 150,
+                  width: 55,
+                )),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -25,7 +30,8 @@ class LoginSignupSelection extends StatelessWidget {
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 3.3,
-                child: Image.asset('assets/full-logo.png',fit: BoxFit.fitHeight),
+                child:
+                    Image.asset('assets/full-logo.png', fit: BoxFit.fitHeight),
               ),
               const Text(
                 'Discover your unique color',
@@ -37,15 +43,21 @@ class LoginSignupSelection extends StatelessWidget {
               SizedBox(height: MediaQuery.of(context).size.height / 7),
               CustomButton(
                 text: 'Login',
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPage()));
                 },
               ),
               const SizedBox(height: 20),
               CustomButton(
                 text: 'Sign up',
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SignupPage()));
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignupPage()));
                 },
               )
               // GestureDetector(
@@ -75,7 +87,11 @@ class LoginSignupSelection extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Image.asset('assets/bottom-wings.png', height: 60, width: 60,),
+            child: Image.asset(
+              'assets/bottom-wings.png',
+              height: 60,
+              width: 60,
+            ),
           ),
         ],
       ),
