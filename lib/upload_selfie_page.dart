@@ -1,5 +1,6 @@
+import 'package:color_palette/widgets/result_list_page_widget.dart';
+import 'package:color_palette/widgets/scan_selfie_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class UploadSelfiePage extends StatefulWidget {
   const UploadSelfiePage({super.key});
@@ -11,32 +12,9 @@ class UploadSelfiePage extends StatefulWidget {
 class _UploadSelfiePageState extends State<UploadSelfiePage> {
   int currentPageIndex = 0;
 
-  // int _selectedIndex = 0;
-  // static const TextStyle optionStyle =
-  // TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  // static const List<Widget> _widgetOptions = <Widget>[
-  //   Text(
-  //     'Index 0: Home',
-  //     style: optionStyle,
-  //   ),
-  //   Text(
-  //     'Index 1: Business',
-  //     style: optionStyle,
-  //   ),
-  // ];
-  //
-  // void _onItemTapped(int index) {
-  //   setState(() {
-  //     _selectedIndex = index;
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('UploadSelfiePage'),
-      // ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xffE8107A),
         currentIndex: currentPageIndex,
@@ -51,204 +29,25 @@ class _UploadSelfiePageState extends State<UploadSelfiePage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.photo_camera_front_outlined,
-              color: Colors.white,
+              // color: Colors.white,
             ),
             label: 'Scan',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.verified_outlined,
-              color: Colors.white,
+              // color: Colors.white,
             ),
             label: 'Results',
           ),
         ],
       ),
-
-      //bottomNavigationBar: BottomNavigationBar(
-      //   backgroundColor: Color(0xffE8107A),
-      //   items: <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.document_scanner_outlined),
-      //       label: 'Scan',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.business),
-      //       label: 'Business',
-      //     ),
-      //   ],
-      //   currentIndex: _selectedIndex,
-      //   selectedItemColor: Colors.amber[800],
-      //   onTap: _onItemTapped,
-      // ),
-
       body: <Widget>[
         /// uploading selfie page
-        Padding(
-          padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 50),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Upload Selfie',
-                          style: TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xffE8107A))),
-                      Text('Get your personalized results',
-                          style: TextStyle(fontSize: 16, color: Colors.grey)),
-                    ],
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.pushNamed(context, '/settings');
-                    },
-                    child: const Padding(
-                      padding: EdgeInsets.only(left: 20.0),
-                      child: Icon(Icons.settings,
-                          size: 30, color: Color(0xffE8107A)),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Container(
-                  height: 130,
-                  width: 130,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color(0xffE8107A).withOpacity(0.5),
-                        spreadRadius: 3,
-                        blurRadius: 3,
-                        offset:
-                            const Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: const Color(0xffE8107A), width: 1),
-                  ),
-                  child: GestureDetector(
-                    onTap: () {
-                      // Navigator.pushNamed(context, '/camera');
-                    },
-                    child: const Icon(Icons.add_a_photo,
-                        size: 50, color: Color(0xffE8107A)),
-                  ),
-                ),
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height / 5),
-              const Padding(
-                padding: EdgeInsets.all(25),
-                child: Text(
-                  'Upload your selfie to get your personalized results',
-                  style: TextStyle(fontSize: 23, color: Color(0xffE8107A)),
-                ),
-              ),
-            ],
-          ),
-        ),
-
+        ScanSelfieWidget(),
         /// Result page
-        Padding(
-          padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 50),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Your Results',
-                          style: TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xffE8107A))),
-                      Text('Your color analysis results',
-                          style: TextStyle(fontSize: 16, color: Colors.grey)),
-                    ],
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.pushNamed(context, '/settings');
-                    },
-                    child: const Padding(
-                      padding: EdgeInsets.only(left: 30.0),
-                      child: Icon(Icons.settings,
-                          size: 30, color: Color(0xffE8107A)),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                child: GestureDetector(
-                  onTap: () {
-                    print('Result Container Tapped');
-                    // Navigator.pushNamed(context, '/camera');
-                  },
-                  child: Container(
-                      padding: const EdgeInsets.only(left: 20),
-                      alignment: Alignment.bottomCenter,
-                      height: 250,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0xffE8107A).withOpacity(0.5),
-                            spreadRadius: 2,
-                            blurRadius: 2,
-                            offset:
-                            const Offset(0, 2), // changes position of shadow
-                          ),
-                        ],
-                        image: DecorationImage(image: AssetImage('assets/dummy-kid-img.jpg'), fit: BoxFit.cover, opacity: 0.8),
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: const Color(0xffE8107A), width: 1),
-                      ),
-                      child: const Row(
-                        children: [
-                          Icon(Icons.remove_red_eye_outlined, size: 50, color: Colors.white),
-                          Text('Tap to reveal', style: TextStyle(fontSize: 23, color: Colors.white, fontWeight: FontWeight.bold)),
-                        ],
-                      )
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+        ResultListPageWidget(),
       ][currentPageIndex],
-    );
-  }
-}
-
-class ResultsList extends StatelessWidget {
-  const ResultsList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 10,
-      itemBuilder: (BuildContext context, int index) {
-        return const ListTile(
-          leading: Icon(FontAwesomeIcons.palette),
-          title: Text('Color Palette'),
-          subtitle: Text('Your color analysis results'),
-          trailing: Icon(Icons.arrow_forward_ios),
-        );
-      },
     );
   }
 }
