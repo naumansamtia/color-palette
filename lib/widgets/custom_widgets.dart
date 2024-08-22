@@ -50,6 +50,69 @@ class CustomButton extends StatelessWidget {
   }
 }
 
+class CustomButtonWithIcon extends StatelessWidget {
+  final Icon? icon;
+  final double? iconSize;
+  final Color? iconColor;
+  final String text;
+  final void Function() onPressed;
+  final double? width;
+  final double? height;
+  final Color? color;
+  final Color? textColor;
+  final double? fontSize;
+
+  const CustomButtonWithIcon({
+    super.key,
+    required this.text,
+    required this.onPressed,
+    this.width,
+    this.height,
+    this.color,
+    this.textColor,
+    this.fontSize,
+    this.icon,
+    this.iconSize,
+    this.iconColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+          height: height ?? 45,
+          width: width ?? MediaQuery.of(context).size.width / 1.6,
+          decoration: BoxDecoration(
+              color: color ?? Colors.white,
+              border: Border.all(color: const Color(0xffE8107A), width: 1.5),
+              // gradient: LinearGradient(
+              //   colors: [Color(0xFFf45d27), Color(0xFFf5851f)],
+              // ),
+              borderRadius: const BorderRadius.all(Radius.circular(50))),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                icon?.icon,
+                color: textColor ?? const Color(0xffE8107A),
+                size: iconSize ?? 20,
+              ),
+              const SizedBox(width: 10),
+              Text(
+                text,
+                style: TextStyle(
+                  color: textColor ?? const Color(0xffE8107A),
+                  fontSize: fontSize ?? 16,
+                ),
+              ),
+            ],
+          )
+      ),
+    );
+  }
+}
+
 class CustomTextFieldForm extends StatelessWidget {
   final String labelText;
   final TextEditingController controller;
